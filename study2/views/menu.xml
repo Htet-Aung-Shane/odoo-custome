@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<menuitem id="ha_student_menu" name="Contacts" sequence="10" action="contacts.action_contacts" parent="menu_student"/>    
+</odoo>
