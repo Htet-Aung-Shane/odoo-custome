@@ -1,5 +1,5 @@
 {
-    'name' : 'HAS_Custom',
+    'name' : 'Customer Extension',
     'description' : 'HAS_Custom_description',
     'depends' : ['contacts'],
     'data' : [

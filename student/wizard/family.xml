@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="family_member_wizard_view_form" model="ir.ui.view">
+		<field name="name">family.member.wizard.form</field>
+		<field name="model">family.member.wizard</field>
+		<field name="arch" type="xml">
+			<form string="">
+				<sheet>
+					<group>
+						<group>
+							<field name="name" />
+							<field name="age" />
+							<field name="occupation" />
+						</group>
+					</group>
+                    <group>
+                        <field name="gender" widget="radio"/>
+                    </group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>
