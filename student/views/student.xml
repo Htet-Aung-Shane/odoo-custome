@@ -17,19 +17,20 @@
 			<field name="arch" type="xml">
 				<form string="Student Form">
 					<sheet>
-                        <field name="image" widget="image" class="oe_avatar"/>
-                        <group>
+						<field name="image" widget="image" class="oe_avatar"/>
 						<group>
-							<field name="name" />
-							<field name="phone" />
-							<field name="email" />
+							<group>
+								<field name="name" />
+								<field name="phone" />
+								<field name="email" />
+							</group>
+							<group>
+								<field name="dob" />
+								<field name="partner" />
+								<field name="contact_id" />
+								<field name="tag_ids" widget="many2many_tags" />
+							</group>
 						</group>
-                        <group>
-                            <field name="dob" />
-							<field name="partner" />
-							<field name="contact_id" />
-                        </group>
-                    </group>
 						<notebook>
 							<page name="student_ids" string="Family">
 								<!--<button name="action_family" type="object" class="btn-primary" string="Add1" /> -->
@@ -68,10 +69,25 @@
 				</form>
 			</field>
 		</record>
+		<record id="view_student_search" model="ir.ui.view">
+			<field name="name">student.name.search</field>
+			<field name="model">ha.student</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+					<field name="email" />
+					<filter string="HAS" name="has" domain="[('name', '=', 'Htet Aung Shane')]" />
+					<group expand="0" string="HAS">
+						<filter string="HAS" name="has" context="{'group_by':'name'}" />
+					</group>
+				</search>
+			</field>
+		</record>
 		<record id="ha_student_view_act" model="ir.actions.act_window">
 			<field name="name">Student</field>
 			<field name="res_model">ha.student</field>
-			<field name="view_mode">kanban,tree,form</field>
+			<field name="view_mode">kanban,tree,form,activity</field>
 		</record>
 		<menuitem id="menu_student" name="Student" action="ha_student_view_act" web_icon="student,static/description/icon.png" />
 	</data>
