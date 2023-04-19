@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+                id="report_student_xlsx"
+                model="res.partner"
+                string="Print to xlsx"
+                report_type="xlsx"
+                name="student.report_student_excel_report"
+                file="student.report_student_excel_report"
+        />
+</odoo>

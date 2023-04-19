@@ -2,7 +2,9 @@ from odoo import models, fields, api
 
 class Student(models.Model):
     _name = 'ha.student'
-    _description = 'Student'
+    #_inherit = ['mail.thread','portal.mixin','mail.activity.mixin','sequence.mixin']
+    _inherit = ['mail.thread','mail.activity.mixin']
+    _description = 'Student' 
 
     name = fields.Char('Name')
     phone = fields.Integer('Phone')
@@ -14,6 +16,12 @@ class Student(models.Model):
     student_ids = fields.One2many('family.member.wizard','family_id',string='Family')
     education_ids = fields.One2many('ha.education','education_id',string='Education')
     tag_ids = fields.Many2many('res.partner.category', string='Tags')
+    active = fields.Boolean(default=True)
+        
+    #activity_ids = 
+    def student_report_xlsx(self):
+        for rec in self:
+            print(rec.name)
 
     #def action_family(self):
      #   return {

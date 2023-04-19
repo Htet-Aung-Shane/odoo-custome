@@ -16,6 +16,10 @@
 			<field name="model">ha.student</field>
 			<field name="arch" type="xml">
 				<form string="Student Form">
+					<header>
+						<button name="student_report_xlsx" string="Report With XLSX" type="object" />
+					</header>
+					<widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
 					<sheet>
 						<field name="image" widget="image" class="oe_avatar"/>
 						<group>
@@ -23,6 +27,7 @@
 								<field name="name" />
 								<field name="phone" />
 								<field name="email" />
+								<field name="active" invisible="1" />
 							</group>
 							<group>
 								<field name="dob" />
@@ -66,6 +71,11 @@
 							</page>
 						</notebook>
 					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids" groups="base.group_user" />
+						<field name="activity_ids" />
+						<field name="message_ids" />
+					</div>
 				</form>
 			</field>
 		</record>
@@ -77,6 +87,8 @@
 				<search>
 					<field name="name" />
 					<field name="email" />
+					<separator/>
+                    <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
 					<filter string="HAS" name="has" domain="[('name', '=', 'Htet Aung Shane')]" />
 					<group expand="0" string="HAS">
 						<filter string="HAS" name="has" context="{'group_by':'name'}" />
