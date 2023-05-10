@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="so_detail_link_mail_template" model="mail.template">
+            <field name="name">Sale Order: Detail link with token</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="email_from">"Digital Zay Ecommerce" &lt;{{object.company_id.email}}&gt;</field>
+            <field name="email_to">{{object.partner_shipping_id.email}}</field>
+            <field name="subject">Sale Order Detail Link</field>
+            <field name="partner_to">{{ object.partner_shipping_id.id }}</field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: white; padding: 0; border-collapse:separate;">
+                    <tr>
+                        <td valign="middle">
+                            <span style="font-size: 10px;">
+                                Your Order
+                            </span><br />
+                            <span style="font-size: 20px; font-weight: bold;">
+                                <t t-esc="object.name" />
+                            </span>
+                        </td>
+                        <td valign="middle" align="right" style="color:#7A57D1;font-weight:bold;">
+                            <span><t t-out="object.company_id.name"></t></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center;">
+                            <hr width="100%" style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin:4px 0px 32px 0px;" />
+                        </td>
+                    </tr>
+                </table>
+                <div style="margin: 0px; padding: 0px;">
+                    <p>
+                        Dear <t t-out="object.partner_shipping_id.name or ''">Name</t>, <br/><br/>
+                        Greetings from dzay.com.mm!<br/>
+                        You have confirmed your purchase. Please click the following link to see detail about your order.<br/>
+                    </p>
+                    <p class="text-center">
+                        <center>
+                            <a t-att-href="object.webclient_access_token_url"
+                                style="background-color:#7A57D1; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                                Click to see your order <t t-out="object.name"></t>
+                            </a>
+                        </center>
+                    </p>
+                    <p>
+                        Do not hesitate to contact us if you have any questions.<br/><br/>
+                        Best Regards,<br/>
+                        Administrator
+                    </p>
+                </div>
+                <table width="100%">
+                    <tr>
+                        <td style="padding: 0; font-size:11px;">
+                            <hr width="100%" style="background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 32px 0px 4px 0px;" />
+                            <b t-esc="object.company_id.name" />
+                            <br />
+                            <div style="color: #999999">
+                                <t t-esc="object.company_id.phone" />
+                                <t t-if="object.company_id.email">
+                                    |
+                                    <a t-att-href="'mailto:%s' % object.company_id.email" style="text-decoration:none; color: #999999;">
+                                        <t t-esc="object.company_id.email" />
+                                    </a>
+                                </t>
+                                <t t-if="object.company_id.website">
+                                    |
+                                    <a t-att-href="'%s' % object.company_id.website" style="text-decoration:none; color: #999999;">
+                                        <t t-esc="object.company_id.website" />
+                                    </a>
+                                </t>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" style="min-width: 590px; padding: 8px; font-size:11px;">
+                            Powered by
+                            <a target="_blank" href="https://www.dzay.com.mm" style="color: #359cd6;">DZay</a>
+                        </td>
+                    </tr>
+                </table>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

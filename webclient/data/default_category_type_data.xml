@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="type1" model="webclient.category.type">
+        <field name="name">Home Page Category</field>
+        <field name="slug">home-category</field>
+      </record>
+      <record id="type2" model="webclient.category.type">
+        <field name="name">E-Commerce Category</field>
+        <field name="slug">e-commerce-category</field>
+      </record>
+    </data>
+</odoo>

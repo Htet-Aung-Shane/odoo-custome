@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="default_website_for_ecommerce" model="website">
+            <field name="name">Ecommerce Web Client</field>
+            <field name="sequence">9</field>
+            <field name="auth_signup_uninvited">b2c</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="res_user_extension" model="ir.ui.view">
+        <field name="name">res.user.extension.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" >
+            <field name="login" position="after">
+                <field name="student" />
+            </field>
+        </field>
+    </record>
+</data>
+</odoo>
