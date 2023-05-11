@@ -6,6 +6,7 @@
     'author': 'Htet Aung Shane',
     'data': [
         'security/ir.model.access.csv',
+        'views/course.xml',
     ],
     
     'installable': True,

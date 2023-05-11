@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ha_course_view_act" model="ir.actions.act_window">
+            <field name="name">Course</field>
+            <field name="res_model">ha.course</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="ha_course_view_tree" model="ir.ui.view">
+            <field name="name">course.tree</field>
+            <field name="model">ha.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>            
+        </record>
+        <record id="ha_course_view_form" model="ir.ui.view">
+            <field name="name">ha.course.view.form</field>
+            <field name="model">ha.course</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="tag_ids" />
+                            </group> 
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    <menuitem id="menu_course" name="Course" action="ha_course_view_act" web_icon="course,static/description/icon.png" />
+    <menuitem id="ha_faculty_menu" name="Faculty" sequence="10" action="contacts.action_contacts" parent="menu_course"/>
+    </data>
+</odoo>

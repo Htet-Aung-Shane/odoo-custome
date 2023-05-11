@@ -5,4 +5,6 @@ class Course(models.Model):
     _description = 'Course'
 
     name = fields.Char ('Name')
+    tag_ids = fields.Many2many('res.partner.category', string='Tags')
+    #subject = fields.Many2many('ha.subject', string='Subjects')
     
