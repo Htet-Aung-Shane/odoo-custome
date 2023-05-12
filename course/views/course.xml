@@ -24,7 +24,7 @@
                         <group>
                             <group>
                                 <field name="name" />
-                                <field name="tag_ids" />
+                                <field name="tag_ids" widget="many2many_tags" />
                             </group> 
                         </group>
                     </sheet>
@@ -32,6 +32,8 @@
             </field>
         </record>
     <menuitem id="menu_course" name="Course" action="ha_course_view_act" web_icon="course,static/description/icon.png" />
-    <menuitem id="ha_faculty_menu" name="Faculty" sequence="10" action="contacts.action_contacts" parent="menu_course"/>
+    <menuitem id="menu_configuration" name="Configuration" sequence="10" parent="menu_course"/>
+    <menuitem id="ha_faculty_menu" name="Faculty" sequence="10" action="ha_faculty_view_act" parent="menu_configuration"/>
+    <menuitem id="ha_subject_menu" name="Subject" sequence="11" action="ha_subject_view_act" parent="menu_configuration"/>
     </data>
 </odoo>

@@ -7,6 +7,8 @@
     'data': [
         'security/ir.model.access.csv',
         'views/course.xml',
+        'views/faculty.xml',
+        'views/subject.xml',
     ],
     
     'installable': True,

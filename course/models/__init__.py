@@ -1,1 +1,1 @@
-from .import course,faculty
+from .import course,faculty,subject

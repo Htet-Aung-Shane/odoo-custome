@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ha_course,name_ha_course,model_ha_course,,1,1,1,1
+access_ha_faculty,name_ha_faculty,model_ha_faculty,,1,1,1,1
+access_ha_subject,name_ha_subject,model_ha_subject,,1,1,1,1
