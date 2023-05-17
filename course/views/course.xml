@@ -32,7 +32,7 @@
             </field>
         </record>
     <menuitem id="menu_course" name="Course" action="ha_course_view_act" web_icon="course,static/description/icon.png" />
-    <menuitem id="menu_configuration" name="Configuration" sequence="10" parent="menu_course"/>
+    <menuitem id="menu_configuration" name="Configuration" parent="menu_course"/>
     <menuitem id="ha_faculty_menu" name="Faculty" sequence="10" action="ha_faculty_view_act" parent="menu_configuration"/>
     <menuitem id="ha_subject_menu" name="Subject" sequence="11" action="ha_subject_view_act" parent="menu_configuration"/>
     </data>
