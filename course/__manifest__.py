@@ -9,6 +9,7 @@
         'views/course.xml',
         'views/faculty.xml',
         'views/subject.xml',
+        'views/student_extension.xml',
     ],
     
     'installable': True,

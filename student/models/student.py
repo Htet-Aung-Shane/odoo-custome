@@ -15,7 +15,7 @@ class Student(models.Model):
     contact_id = fields.Integer(related='partner.contact_id', string='Contact ID', readonly=True)
     student_ids = fields.One2many('family.member.wizard','family_id',string='Family')
     education_ids = fields.One2many('ha.education','education_id',string='Education')
-    tag_ids = fields.Many2many('res.partner.category', string='Tags')
+    tag_ids = fields.Many2many('res.partner.category', string='Tags')    
     active = fields.Boolean(default=True)
         
     #activity_ids = 

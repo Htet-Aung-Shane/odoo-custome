@@ -8,7 +8,7 @@
         'security/ir.model.access.csv',
         'views/student.xml',
         'views/menu.xml',
-        'views/user_extension.xml',
+        #'views/user_extension.xml',
         'wizard/family.xml',
         'report/report.xml',
         'report/report_student.xml',

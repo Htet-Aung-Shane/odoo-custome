@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="student_extension" model="ir.ui.view">
+			<field name="name">student.ha_student_extension_form</field>
+			<field name="model">ha.student</field>
+			<field name="inherit_id" ref="student.ha_student_view_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@name='education']" position="after">
+					<page name="course_detail" string="Course">
+						<group name="course" string="course_group">
+							<group>
+								<field name="course" readonly="1"/>
+								<field name="faculty" readonly="1"/>
+							</group>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

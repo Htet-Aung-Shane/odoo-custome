@@ -69,6 +69,10 @@
 									</tree>
 								</field>
 							</page>
+							<!-- <page name="course" string="Course">
+								<field name="course" />
+								<field name="faculty" />
+							</page> -->
 						</notebook>
 					</sheet>
 					<div class="oe_chatter">
@@ -88,7 +92,7 @@
 					<field name="name" />
 					<field name="email" />
 					<separator/>
-                    <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+					<filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
 					<filter string="HAS" name="has" domain="[('name', '=', 'Htet Aung Shane')]" />
 					<group expand="0" string="HAS">
 						<filter string="HAS" name="has" context="{'group_by':'name'}" />

@@ -29,6 +29,7 @@
                             </group>
                             <group>
                                 <field name="dob" />
+                                <field name="age" />
                                 <field name="partner"  options="{'no_create': True}"/>
                                 <field name="tag_ids" widget="many2many_tags" />
                             </group>

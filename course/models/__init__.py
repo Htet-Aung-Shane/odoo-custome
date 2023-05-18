@@ -1,1 +1,1 @@
-from .import course,faculty,subject
+from .import course,faculty,subject,student_extension

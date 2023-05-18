@@ -7,7 +7,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/admission.xml',
-        # 'views/faculty.xml',
+        'views/ha_sequence.xml',
         # 'views/subject.xml',
     ],
     
