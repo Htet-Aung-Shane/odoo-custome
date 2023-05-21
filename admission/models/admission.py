@@ -16,10 +16,10 @@ class Admission(models.Model):
     student = fields.Many2one('ha.student', string='Student')
     partner = fields.Many2one('res.partner',related='student.partner', string='Partner')
     course =  fields.Many2one('ha.course', string='Course')
-    subject =  fields.Many2one('ha.subject', string='Subject')
+    subject =  fields.Many2many('ha.subject', string='Subject')
     state = fields.Selection(
         selection=[
-            ('draft', 'Draft'), ('done', 'Done')], default='draft', tracking=True)
+            ('draft', 'Draft'), ('done', 'Done')], default='draft')
     #subject = fields.Many2many('ha.subject', string='Subjects')
     
     @api.constrains('start_date', 'end_date')
@@ -36,4 +36,4 @@ class Admission(models.Model):
 
     def action_set_to_draft(self):
         self.state = 'draft'
-    
+        # self.student.write({'course': None})

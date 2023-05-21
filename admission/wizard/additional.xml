@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="admission_additional_wizard_view_form" model="ir.ui.view">
+        <field name="name">admission.additional.wizard.form</field>
+        <field name="model">admission.additional.wizard</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="admission_date" />
+                        <field name="comfirmation_date" />
+                        <field name="parent" />
+                        <field name="additional_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

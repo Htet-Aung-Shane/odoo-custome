@@ -22,22 +22,25 @@
                 <form string="">
                     <header>
                         <button name="action_done" string="Done" class="oe_highlight"
-                                type="object" data-hotkey="v" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
-                        <button name="action_set_to_draft" string="Set To Draft" class="oe_highlight"
-                                type="object" data-hotkey="v" attrs="{'invisible': [('state', '!=', 'done')]}"/>
-                        <field name="state" widget="statusbar"/>
+                            type="object" data-hotkey="v"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}" />
+                        <button name="action_set_to_draft" string="Set To Draft"
+                            class="oe_highlight"
+                            type="object" data-hotkey="v"
+                            attrs="{'invisible': [('state', '!=', 'done')]}" />
+                        <field name="state" widget="statusbar" />
                     </header>
                     <sheet>
                         <group>
                             <field name="name" />
                             <group>
-                                <field name="start_date" />
-                                <field name="end_date" />
-                                <field name="course" />
-                                <field name="subject" />
+                                <field name="start_date" required="True" />
+                                <field name="end_date" required="True" />
+                                <field name="course" required="True" />
+                                <field name="subject" widget="many2many_tags" required="True" />
                             </group>
                             <group>
-                                <field name="student" />
+                                <field name="student" required="True" />
                                 <field name="partner" />
                             </group>
                         </group>
@@ -45,6 +48,7 @@
                 </form>
             </field>
         </record>
-        <menuitem id="menu_admission" name="Admisssion" action="ha_admission_view_act" web_icon="admission,static/description/icon.png" />
+        <menuitem id="menu_admission" name="Admisssion" action="ha_admission_view_act"
+            web_icon="admission,static/description/icon.png" />
     </data>
 </odoo>

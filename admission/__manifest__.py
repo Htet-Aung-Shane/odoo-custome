@@ -9,6 +9,7 @@
         'views/admission.xml',
         'views/ha_sequence.xml',
         # 'views/subject.xml',
+        'wizard/additional.xml',
     ],
     
     'installable': True,
