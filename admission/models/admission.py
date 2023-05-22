@@ -17,6 +17,7 @@ class Admission(models.Model):
     partner = fields.Many2one('res.partner',related='student.partner', string='Partner')
     course =  fields.Many2one('ha.course', string='Course')
     subject =  fields.Many2many('ha.subject', string='Subject')
+    admission_ids = fields.One2many('admission.additional.wizard','additional_id',string='Additional')
     state = fields.Selection(
         selection=[
             ('draft', 'Draft'), ('done', 'Done')], default='draft')

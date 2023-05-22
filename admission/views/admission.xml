@@ -43,6 +43,18 @@
                                 <field name="student" required="True" />
                                 <field name="partner" />
                             </group>
+                            <notebook>
+                                <page name="admission_additional" string="Additional">
+                                    <field name="admission_ids">
+                                        <tree editable="bottom">
+                                            <field name="admission_date" />
+                                            <field name="comfirmation_date" />
+                                            <field name="parent" />
+                                            <field name="additional_id" />
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
                         </group>
                     </sheet>
                 </form>
