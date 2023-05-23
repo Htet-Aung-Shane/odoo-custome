@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="enrollment_form" name="Admission Enrollment Form">
+        <t t-call="website.layout">
+            <!-- <div id="wrap" class="oe_structure oe_empty">
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <form role="form" data-toggle="validator" method="post"
+                                  action="/enrollment/submit"
+                                  id="request_demo">
+                                <div>
+                                    <h3>KINGS International School - Preschool Enrollment Form</h3>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div> -->
+            <h1>Hello World</h1>
+        </t>
+    </template>
+
+    <record id="menu_website_enrollment" model="website.menu">
+        <field name="name">Admission Enrollment</field>
+        <field name="url">/enrollment</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">65</field>
+    </record>
+</odoo>

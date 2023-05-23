@@ -8,7 +8,7 @@
         'security/ir.model.access.csv',
         'views/admission.xml',
         'views/ha_sequence.xml',
-        # 'views/subject.xml',
+        'views/admission_website_view.xml',
         'wizard/additional.xml',
     ],
     
