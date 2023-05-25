@@ -2,27 +2,61 @@
 <odoo>
     <template id="enrollment_form" name="Admission Enrollment Form">
         <t t-call="website.layout">
-            <!-- <div id="wrap" class="oe_structure oe_empty">
-                <section>
+            <div class="container">
+                <div class="row">
+                    <form role="form" data-toggle="validator" method="post" action="/enrollment/submit" id="request_demo">
+                        <div>
+                            <h3>Admission - Enrollment Form</h3>
+                        </div>
+                        <div class="row js_online_get_data">
+                            <br />
+                            <div class="form-group col-md-12" style="padding-right: 45px;">
+                                <input type="hidden" name="csrf_token"
+                                               t-att-value="request.csrf_token()"/>
+                                <label for="from">From</label>
+                                <select class="form-control" name="academic_year_from" required="1">
+                                    <option></option>
+                                    <option t-attf-value="2020" required="1">2020</option>
+                                    <option t-attf-value="2021" required="1">2021</option>
+                                    <option t-attf-value="2022" required="1">2022</option>
+                                    <option t-attf-value="2023" required="1">2023</option>
+                                    <option t-attf-value="2024" required="1">2024</option>
+                                    <option t-attf-value="2025" required="1">2025</option>
+                                    <option t-attf-value="2026" required="1">2026</option>
+                                    <option t-attf-value="2027" required="1">2027</option>
+                                    <option t-attf-value="2028" required="1">2028</option>
+                                    <option t-attf-value="2029" required="1">2029</option>
+                                    <option t-attf-value="2030" required="1">2030</option>
+                                </select>
+                            </div>
+                            <div class="from-group col-md-12" style="padding-right: 45px;">
+                                <button type="submit" class="btn btn-primary mb16 mt16 col-md-12">Submit
+                                        </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="enrollment_confirmed" name="Admission Enrollment">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="mt32 mb64">
                     <div class="container">
                         <div class="row">
-                            <form role="form" data-toggle="validator" method="post"
-                                  action="/enrollment/submit"
-                                  id="request_demo">
-                                <div>
-                                    <h3>KINGS International School - Preschool Enrollment Form</h3>
-                                </div>
-                            </form>
+                            <div class="text-center">
+                                <h2>Thanks For Your Informations</h2>
+
+                            </div>
                         </div>
                     </div>
                 </section>
-            </div> -->
-            <h1>Hello World</h1>
+            </div>
         </t>
     </template>
-
     <record id="menu_website_enrollment" model="website.menu">
-        <field name="name">Admission Enrollment</field>
+        <field name="name">Enrollment</field>
         <field name="url">/enrollment</field>
         <field name="parent_id" ref="website.main_menu"/>
         <field name="sequence" type="int">65</field>
