@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_footer" inherit_id="website.layout" name="Custom Footer">
+            <xpath expr="//footer" position="replace">
+                <footer class="p-3">
+                    <div class="container my-3">
+                        <div class="row justify-content-between " id="footer_contact">
+                            <div class=" col-lg-3 g-0">
+                                <h6 class="mb-4">Main Campus</h6>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.017897357194!2d96.20237209999999!3d16.8254682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c193117ab69c5d%3A0x17e1dc41b729181c!2z4YCA4YCE4YC64YC44YCF4YC6IOGAoeGAhOGAuuGAkOGArOGAlOGAseGAm-GAvuGAhOGAuuGAlOGAmuGAuuGAgOGAu-GAseGArOGAhOGAuuGAuA!5e0!3m2!1smy!2smm!4v1674102583964!5m2!1smy!2smm"
+                                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"/>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </xpath>
+        </template>
+    </data>
+</odoo>
