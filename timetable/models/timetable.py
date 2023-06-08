@@ -8,6 +8,6 @@ class Timetable(models.Model):
     faculty = fields.Many2one('ha.faculty', string='Faculty')
     course = fields.Many2one('ha.course', string='Course')
     subject = fields.Many2one('ha.subject', string='Subject')
-    start_time = fields.Date ('Start Time')
-    end_time = fields.Date ('End Time')
+    start_time = fields.Datetime ('Start Time')
+    end_time = fields.Datetime ('End Time')
     day = fields.Selection([('monday', 'Monday'), ('tuesday', 'Tuesday'), ('tuesday', 'Tuesday'), ('wednesday', 'Wednesday'), ('friday', 'Friday')], string='Day')

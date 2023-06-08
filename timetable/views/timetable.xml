@@ -4,7 +4,7 @@
         <record id="ha_timetable_view_act" model="ir.actions.act_window">
             <field name="name">Timetable</field>
             <field name="res_model">ha.timetable</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
         <record id="ha_timetable_view_tree" model="ir.ui.view">
             <field name="name">ha.timetable.tree</field>
@@ -36,6 +36,69 @@
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+        <record id="ha_timetable_view_kanban" model="ir.ui.view">
+            <field name="name">ha.timetable.view.kanban</field>
+            <field name="model">ha.timetable</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="name"/>
+                    <field name="faculty" />
+                    <field name="day" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" role="button">
+                                        <span class="fa fa-bars fa-lg" title="Session"/>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable">
+                                            <li>
+                                                <a type="edit">Edit</a>
+                                            </li>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                        </t>
+                                        <li>
+                                            <ul class="oe_kanban_colorpicker"
+                                                data-field="color"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div>
+                                        <strong>
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                    <div class="oe_kanban_left">
+                                        <li>
+                                            <b>Faculty:</b>
+                                            <field name="faculty"/>
+                                        </li>
+                                        <li>
+                                            <b>Subject:</b>
+                                            <field name="subject"/>
+                                        </li>
+                                        <li>
+                                            <b>Course:</b>
+                                            <field name="course"/>
+                                        </li>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <field name="day"/>
+                                    </div>
+                                    <div class="oe_clear"></div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
             </field>
         </record>
         <menuitem id="menu_timetable" name="Timetable" action="ha_timetable_view_act" web_icon="timetable,static/description/icon.png" />
