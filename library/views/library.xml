@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>  
+        <record id="ha_timetable_view_act" model="ir.actions.act_window">
+            <field name="name">Library</field>
+            <field name="res_model">ha.library</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <record id="ha_library_view_tree" model="ir.ui.view">
+            <field name="name">ha.library.tree</field>
+            <field name="model">ha.library</field>
+            <field name="arch" type="xml">
+                <tree string="Library">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>    
+    </data>  
+</odoo>
