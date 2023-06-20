@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ha_library,name_ha_library,model_ha_library,,1,1,1,1
+access_ha_book,name_ha_book,model_ha_book,,1,1,1,1
