@@ -7,6 +7,8 @@ class Book(models.Model):
     name = fields.Char ('Name')
     isbn = fields.Char ('ISBN')
     author = fields.Char ('Author')
+    image = fields.Binary()
     genre = fields.Selection(
         selection=[
             ('draft', 'Draft'), ('horror', 'Horror'), ('adventure', 'Adventure'), ('romance', 'Horror')], default='draft')
+    review = fields.Text ('Review')

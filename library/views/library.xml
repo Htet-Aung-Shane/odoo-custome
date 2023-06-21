@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="ha_library_view_act" model="ir.actions.act_window">
-            <field name="name">Library</field>
-            <field name="res_model">ha.library</field>
+        <record id="ha_book_view_act" model="ir.actions.act_window">
+            <field name="name">book</field>
+            <field name="res_model">ha.book</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <record id="ha_library_view_tree" model="ir.ui.view">
-            <field name="name">ha.library.tree</field>
-            <field name="model">ha.library</field>
+        <record id="ha_book_view_tree" model="ir.ui.view">
+            <field name="name">ha.book.tree</field>
+            <field name="model">ha.book</field>
             <field name="arch" type="xml">
-                <tree string="Library">
+                <tree string="book">
                     <field name="name" />
                 </tree>
             </field>
         </record>
-        <record id="ha_library_view_form" model="ir.ui.view">
-            <field name="name">ha.library.view.form</field>
-            <field name="model">ha.library</field>
+        <record id="ha_book_view_form" model="ir.ui.view">
+            <field name="name">ha.book.view.form</field>
+            <field name="model">ha.book</field>
             <field name="arch" type="xml">
                 <form string="">
                     <sheet>
-                        <group>
-                           <field name="name" />
-                            
+                    <field name="image" widget="image" class="oe_avatar"/>
+                        <group>         __                  
+                            <group>
+                                <field name="name" string="Book Name" />
+                                <field name="isbn" />
+                                <field name="author" />
+                                <field name="genre" />
+                            </group>
+                            <group>
+                                <field name="review" />
+                            </group>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
-        <menuitem id="menu_library" name="Library" action="ha_library_view_act"
+        <menuitem id="menu_book" name="Library" action="ha_book_view_act"
             web_icon="library,static/description/icon.png" />
     </data>
 </odoo>

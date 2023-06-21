@@ -7,6 +7,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/library.xml',
+        'report/isbn_badge.xml',
         ],
     
     'installable': True,

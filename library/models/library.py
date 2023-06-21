@@ -5,3 +5,4 @@ class Library(models.Model):
     _description = 'Library'
 
     name = fields.Char ('Name')
+    book_id = fields.Many2one('ha.book', string='Student')
