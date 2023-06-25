@@ -8,5 +8,7 @@ class ContactId(models.Model):
     cv_name = fields.Char('CV Name')
     cv_email = fields.Char('CV Email')
     cv_phone = fields.Char('CV Phone')
+    barcode = fields.Char('Barcode')
  
     _sql_constraints=[('unique_contact_id','unique(contact_id)','Contact ID Duplicate, Please input another id')]
+    _sql_constraints=[('unique_barcode','unique(barcode)','Barcode Duplicate, Please input another id')]

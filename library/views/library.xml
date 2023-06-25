@@ -33,6 +33,7 @@
                                 <field name="review" />
                             </group>
                         </group>
+                        <field name="attachment"/>
                     </sheet>
                 </form>
             </field>

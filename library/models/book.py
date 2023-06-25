@@ -12,3 +12,4 @@ class Book(models.Model):
         selection=[
             ('draft', 'Draft'), ('horror', 'Horror'), ('adventure', 'Adventure'), ('romance', 'Horror')], default='draft')
     review = fields.Text ('Review')
+    attachment = fields.Binary()

@@ -8,6 +8,7 @@
 			<field name="arch" type="xml">
 				<xpath expr="//field[@name='vat']" position="after">
 					<field name="contact_id" />
+					<field name="barcode" />
 				</xpath>
 				<xpath expr="//page[@name='internal_notes']" position="after">
 					<page name="cv_form" string="CV Form">
