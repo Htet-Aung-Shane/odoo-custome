@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="bookrent_form" name="Admission Enrollment Form">
+        <div>
+            <h3>Admission - Enrollment Form</h3>
+        </div>
+    </template>
+
+
+</odoo>
