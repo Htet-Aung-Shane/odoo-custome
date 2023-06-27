@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="bookrent_form" name="Admission Enrollment Form">
-        <div>
-            <h3>Admission - Enrollment Form</h3>
-        </div>
+    <template id="bookrent_form" name="Books">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <h3 class="text-center">Freely Rent Books</h3>
+                </div>
+                <div class="row">
+                    <t t-foreach="data" t-as="record">
+                        <span t-esc="record.name"/>
+                        <div class="card col-lg-6">
+                            <img t-if="record.image"
+                                 t-att-src="image_data_uri(record.image)" height="100" width="100" class="img-fluid" alt="..."/>
+                            <div class="card-body">
+                                <h5 class="card-title" t-esc="record.name" />
+                                <p class="card-text" t-esc="record.review" />
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
     </template>
-
-
 </odoo>

@@ -8,7 +8,6 @@ class Book(models.Model):
     isbn = fields.Char ('ISBN')
     author = fields.Char ('Author')
     image = fields.Binary()
-    category_id = fields.Many2many('product.category', string='Category')
     genre = fields.Selection(
         selection=[
             ('draft', 'Draft'), ('horror', 'Horror'), ('adventure', 'Adventure'), ('romance', 'Horror')], default='draft')
