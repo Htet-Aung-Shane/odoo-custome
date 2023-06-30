@@ -2,22 +2,51 @@
 <odoo>
     <template id="bookrent_form" name="Books">
         <t t-call="website.layout">
-            <div class="container">
-                <div class="row">
-                    <h3 class="text-center">Freely Rent Books</h3>
+            <section class="my-book-title"
+                     style="background-image: url(&quot;/library/static/description/inner-pagebg.jpg&quot;);position: relative;background-position-y: center;">
+                <div class="overlay"></div>
+                <div class="container pt64 pb64">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                            <h1 class="text-white" style="font-size: 40px;">Freely Rent Books
+                            </h1>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center text-md-left search-box">
+                            <form t-attf-action="/my-books" role="search"
+                                  method="get">
+                                <div class="input-group">
+                                    <input type="text" class="form-control"
+                                           name="search"
+                                           t-attf-placeholder="Search"
+                                           t-att-value="search"
+                                           style="border-radius:0px;border-right: 0; height:50px;"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn" type="submit"
+                                                style="border-radius:0px">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
+            </section>
+            <div class="container mt64">
                 <div class="row">
                     <t t-foreach="data" t-as="record">
-                        <span t-esc="record.name"/>
-                        <div class="card col-lg-6">
-                            <img t-if="record.image"
+                            <div class="col-md-6 col-sm-12 col-xs-12 col-lg-4 mb32 clearfix">
+                                <div class="card">
+                                <img t-if="record.image"
                                  t-att-src="image_data_uri(record.image)" height="100" width="100" class="img-fluid" alt="..."/>
-                            <div class="card-body">
-                                <h5 class="card-title" t-esc="record.name" />
-                                <p class="card-text" t-esc="record.review" />
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <div class="card-body">
+                                    <h5 class="card-title" t-esc="record.name" />
+                                    <p class="card-text" t-esc="record.review" />
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
                             </div>
-                        </div>
+                            </div>
+                            
                     </t>
                 </div>
             </div>

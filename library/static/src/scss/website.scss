@@ -1,0 +1,9 @@
+.card .card.body{
+    &:hover{
+            border: 15px solid $o-brand-primary;
+        }
+        
+}
+body{
+    display: none !important;
+}

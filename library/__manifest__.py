@@ -9,8 +9,12 @@
         'views/library.xml',
         'views/book_website_view.xml',
         'report/isbn_badge.xml',
+        
         ],
-    
+    'css': {
+            'library/static/src/scss/website.scss',
+       
+    },
     'installable': True,
     'auto_install': False,
     'application': True,
